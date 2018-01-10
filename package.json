@@ -1,0 +1,38 @@
+{
+  "version": "0.0.2",
+  "author": {
+    "name": "Dave Conway-Jones",
+    "email": "ceejay@vnet.ibm.com",
+    "url": "http://nodered.org"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "sails.io.js": "~1.1.13",
+    "socket.io-client": "~2.0.4"
+  },
+  "deprecated": false,
+  "description": "Node Red client to work with sails server",
+  "homepage": "https://github.com/isaacvitor/node-red-contrib-sails#readme",
+  "keywords": [
+    "node-red",
+    "sails"
+  ],
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "name": "node-red-contrib-sails",
+  "node-red": {
+    "nodes": {
+      "sails": "sailsclient.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dceejay/node-red-contrib-sails.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dceejay/node-red-contrib-sails/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
