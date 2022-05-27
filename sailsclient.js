@@ -29,6 +29,7 @@ module.exports = function(RED) {
         node.on('input', function(msg) {
             var top = node.path || msg.topic || "";
             var method = node.method || msg.method || "post";
+            var room = msg.room || null;
             node.status({shape:"dot",fill:"blue"});
             io.socket.request({method:method, url:top, data:msg.payload, headers:msg.headers}, function(body, JWR) {
                 node.status({});
@@ -36,6 +37,11 @@ module.exports = function(RED) {
                 msg.payload = body;
                 node.send(msg);
             });
+            if(typeof room === 'string'){
+                io.socket.on(room, function(incoming){
+                    node.send(incoming);
+                });
+            }
         });
 
         node.on('close', function(done) {
